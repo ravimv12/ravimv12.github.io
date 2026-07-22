@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Ravikumar Maruti Vibhuti | Academic Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royalBlue: '#0A3161',    /* Deep Royal Blue */
+                        royalBlueLight: '#1D4ED8', /* Tailwind Blue 700 */
+                        maroon: '#800000',       /* Classic Academic Maroon */
+                        maroonLight: '#9b2c2c',  /* Lighter Maroon */
+                        bgLight: '#F8FAFC',      /* Slate 50 */
+                        textMain: '#334155',     /* Slate 700 */
+                        textMuted: '#64748B'     /* Slate 500 */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        serif: ['Merriweather', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #334155;
+            background-color: #F8FAFC;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+
+        .section-heading {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #0A3161;
+            font-weight: 700;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -0.5rem;
+            width: 3rem;
+            height: 0.25rem;
+            background-color: #800000; /* Maroon underline */
+            border-radius: 9999px;
+        }
+
+        /* Glassmorphism for sticky nav */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #800000; /* Maroon hover line */
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Card Hover Effects */
+        .hover-card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .hover-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border-color: #1D4ED8;
+        }
+
+        /* Subtle Porous Polymer Background Pattern */
+        .bg-porous {
+            background-color: #ffffff;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='103.92304845413264' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230a3161' fill-opacity='0.03'%3E%3Cpath d='M30 51.962L60 34.641v-34.64L30 -17.32 0 0v34.641zM30 48.5L2.887 32.91v-31.18L30 -13.856l27.113 15.586v31.18z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-maroon selection:text-white">
+
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 font-serif font-bold text-xl tracking-tight text-royalBlue">
+                    Dr. Ravikumar M. V.
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 text-sm font-medium text-textMain">
+                    <a href="#about" class="nav-link hover:text-maroon">About</a>
+                    <a href="#research" class="nav-link hover:text-maroon">Research</a>
+                    <a href="#publications" class="nav-link hover:text-maroon">Publications</a>
+                    <a href="#experience" class="nav-link hover:text-maroon">Experience</a>
+                    <a href="#awards" class="nav-link hover:text-maroon">Awards</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-royalBlue hover:text-maroon focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-lg">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-textMain hover:text-maroon hover:bg-blue-50">About</a>
+                <a href="#research" class="block px-3 py-2 rounded-md text-base font-medium text-textMain hover:text-maroon hover:bg-blue-50">Research</a>
+                <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium text-textMain hover:text-maroon hover:bg-blue-50">Publications</a>
+                <a href="#experience" class="block px-3 py-2 rounded-md text-base font-medium text-textMain hover:text-maroon hover:bg-blue-50">Experience</a>
+                <a href="#awards" class="block px-3 py-2 rounded-md text-base font-medium text-textMain hover:text-maroon hover:bg-blue-50">Awards</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-porous border-b border-gray-200 overflow-hidden">
+        
+        <!-- Background Floating Porous Structure (CPP Hexagonal Lattice) -->
+        <div class="absolute top-10 right-10 md:right-32 opacity-10 pointer-events-none animate-[spin_120s_linear_infinite] hidden lg:block">
+            <svg width="250" height="250" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Hexagonal Lattice representing CPPs/COFs -->
+                <path d="M50 0 L93.3 25 L93.3 75 L50 100 L6.7 75 L6.7 25 Z" fill="none" stroke="#0A3161" stroke-width="2"/>
+                <path d="M50 20 L76 35 L76 65 L50 80 L24 65 L24 35 Z" fill="none" stroke="#800000" stroke-width="2"/>
+                <circle cx="50" cy="20" r="4" fill="#0A3161" />
+                <circle cx="76" cy="35" r="4" fill="#0A3161" />
+                <circle cx="76" cy="65" r="4" fill="#0A3161" />
+                <circle cx="50" cy="80" r="4" fill="#0A3161" />
+                <circle cx="24" cy="65" r="4" fill="#0A3161" />
+                <circle cx="24" cy="35" r="4" fill="#0A3161" />
+                <!-- Bonds/Connections -->
+                <line x1="50" y1="20" x2="50" y2="0" stroke="#800000" stroke-width="2" />
+                <line x1="76" y1="35" x2="93.3" y2="25" stroke="#800000" stroke-width="2" />
+                <line x1="76" y1="65" x2="93.3" y2="75" stroke="#800000" stroke-width="2" />
+                <line x1="50" y1="80" x2="50" y2="100" stroke="#800000" stroke-width="2" />
+                <line x1="24" y1="65" x2="6.7" y2="75" stroke="#800000" stroke-width="2" />
+                <line x1="24" y1="35" x2="6.7" y2="25" stroke="#800000" stroke-width="2" />
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <!-- Profile Image -->
+                <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 rounded-full overflow-hidden border-4 border-white shadow-xl relative group">
+                    <img src="20260428_145854-IMG_STYLE.jpg" onerror="this.onerror=null; this.src='https://placehold.co/400x400/0A3161/ffffff?text=Dr.+Ravikumar';" alt="Dr. Ravikumar Maruti Vibhuti" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                </div>
+                
+                <!-- Intro Text -->
+                <div class="text-center md:text-left flex-grow">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl text-royalBlue font-bold mb-4 tracking-tight">Dr. Ravikumar M. Vibhuti</h1>
+                    <h2 class="text-xl md:text-2xl text-maroon font-medium mb-2">Ph.D. in Chemistry | Organic & Materials Chemist</h2>
+                    <p class="text-lg text-textMuted mb-6 flex items-center justify-center md:justify-start gap-2">
+                        <i class="fas fa-university opacity-70"></i> 
+                        National Institute of Technology Karnataka (NITK), Surathkal
+                    </p>
+                    <p class="max-w-3xl text-textMain leading-relaxed mb-8">
+                        Specializing in the development of synthetic methodologies and reticular building blocks. My research focuses on designing ionic and fluorescent conjugated porous polymers (CPPs) for critical environmental applications, including iodine adsorption, dye removal, and the sensing of metal ions and nitroaromatic explosives.
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="mailto:ravimv12@gmail.com" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-royalBlue text-white font-medium hover:bg-royalBlueLight transition shadow-md">
+                            <i class="fas fa-envelope"></i> Email Me
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=oZ3ms64AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 border-royalBlue text-royalBlue hover:bg-maroon hover:border-maroon hover:text-white transition bg-white shadow-sm font-medium" aria-label="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i> Google Scholar
+                        </a>
+                        <a href="https://www.linkedin.com/in/ravikumar-vibhuti-07389b1a3/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 border-royalBlue text-royalBlue hover:bg-maroon hover:border-maroon hover:text-white transition bg-white shadow-sm font-medium" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://orcid.org/0009-0002-0384-6573" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 border-royalBlue text-royalBlue hover:bg-maroon hover:border-maroon hover:text-white transition bg-white shadow-sm font-medium" aria-label="ORCID">
+                            <i class="fab fa-orcid"></i> ORCID
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Ravikumar-Vibhuti" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 border-royalBlue text-royalBlue hover:bg-maroon hover:border-maroon hover:text-white transition bg-white shadow-sm font-medium" aria-label="ResearchGate">
+                            <i class="fab fa-researchgate"></i> ResearchGate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-bgLight">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+                
+                <!-- Biography -->
+                <div class="lg:col-span-2">
+                    <h2 class="text-3xl section-heading">Biography</h2>
+                    <div class="prose prose-slate max-w-none text-textMain leading-relaxed space-y-4">
+                        <p>
+                            I recently completed my Ph.D. in Chemistry at the National Institute of Technology Karnataka (NITK) under the supervision of Dr. Lakshmi Vellanki. My doctoral dissertation, titled <em>"π-Conjugated Porous Polymers with Ionic and Luminescent Cores for the Detection and Removal of Environmental Pollutants,"</em> explored novel architectures for environmental remediation. 
+                        </p>
+                        <p>
+                            Prior to my Ph.D., I achieved University 1st Rank in my Master of Science (General Chemistry) from Karnatak University, Dharwad. I possess strong expertise in single and multi-step organic synthesis, anhydrous chemistry, and synthesis and structural elucidation of complex reticular porous material frameworks. Beyond synthesis, I am experienced in theoretical DFT calculations using Gaussian, molecular docking, and advanced analytical characterization techniques.
+                        </p>
+                    </div>
+
+                    <div class="mt-12">
+                        <h2 class="text-2xl section-heading mb-6">Technical Skills</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <h4 class="font-bold text-royalBlue mb-3"><i class="fas fa-flask text-maroon mr-2"></i> Synthesis & Chemistry</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="https://en.wikipedia.org/wiki/Organic_synthesis" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-blue-200 rounded-full text-sm font-medium text-royalBlue shadow-sm hover:bg-royalBlue hover:text-white transition">Organic Synthesis</a>
+                                    <a href="https://en.wikipedia.org/wiki/Air-free_technique" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-blue-200 rounded-full text-sm font-medium text-royalBlue shadow-sm hover:bg-royalBlue hover:text-white transition">Anhydrous Chemistry</a>
+                                    <a href="https://en.wikipedia.org/wiki/Conjugated_microporous_polymer" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-blue-200 rounded-full text-sm font-medium text-royalBlue shadow-sm hover:bg-royalBlue hover:text-white transition">CPP Development</a>
+                                    <a href="https://en.wikipedia.org/wiki/Column_chromatography" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-blue-200 rounded-full text-sm font-medium text-royalBlue shadow-sm hover:bg-royalBlue hover:text-white transition">Flash Chromatography</a>
+                                </div>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-royalBlue mb-3"><i class="fas fa-microscope text-maroon mr-2"></i> Characterization & Computation</h4>
+                                <div class="flex flex-wrap gap-2">
+                                    <a href="https://en.wikipedia.org/wiki/Nuclear_magnetic_resonance_spectroscopy" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-red-200 rounded-full text-sm font-medium text-maroon shadow-sm hover:bg-maroon hover:text-white transition">1D & 2D NMR</a>
+                                    <a href="https://en.wikipedia.org/wiki/Fourier-transform_infrared_spectroscopy" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-red-200 rounded-full text-sm font-medium text-maroon shadow-sm hover:bg-maroon hover:text-white transition">FTIR</a>
+                                    <a href="https://en.wikipedia.org/wiki/Ultraviolet%E2%80%93visible_spectroscopy" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-red-200 rounded-full text-sm font-medium text-maroon shadow-sm hover:bg-maroon hover:text-white transition">UV-Vis</a>
+                                    <a href="https://en.wikipedia.org/wiki/BET_theory" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-red-200 rounded-full text-sm font-medium text-maroon shadow-sm hover:bg-maroon hover:text-white transition">BET</a>
+                                    <a href="https://en.wikipedia.org/wiki/X-ray_photoelectron_spectroscopy" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-red-200 rounded-full text-sm font-medium text-maroon shadow-sm hover:bg-maroon hover:text-white transition">XPS</a>
+                                    <a href="https://en.wikipedia.org/wiki/Powder_diffraction" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-red-200 rounded-full text-sm font-medium text-maroon shadow-sm hover:bg-maroon hover:text-white transition">PXRD</a>
+                                    <a href="https://en.wikipedia.org/wiki/Scanning_electron_microscope" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-red-200 rounded-full text-sm font-medium text-maroon shadow-sm hover:bg-maroon hover:text-white transition">SEM</a>
+                                    <a href="https://en.wikipedia.org/wiki/Gaussian_(software)" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-red-200 rounded-full text-sm font-medium text-maroon shadow-sm hover:bg-maroon hover:text-white transition">Gaussian (DFT)</a>
+                                    <a href="https://en.wikipedia.org/wiki/AutoDock" target="_blank" rel="noopener noreferrer" class="px-3 py-1 bg-white border border-red-200 rounded-full text-sm font-medium text-maroon shadow-sm hover:bg-maroon hover:text-white transition">AutoDock</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Sidebar -->
+                <div class="lg:col-span-1">
+                    <h2 class="text-2xl section-heading mb-6">Education</h2>
+                    <div class="space-y-8">
+                        <div class="relative pl-4 border-l-2 border-royalBlue">
+                            <div class="absolute w-3 h-3 bg-maroon rounded-full -left-[0.4rem] top-1"></div>
+                            <h3 class="font-bold text-royalBlue text-lg leading-tight">Ph.D. in Chemistry</h3>
+                            <p class="text-sm text-textMuted mt-1 mb-2">National Institute of Technology Karnataka (NITK), Surathkal</p>
+                            <p class="text-xs font-bold text-maroon mb-2">July 2022 − July 2026</p>
+                            <p class="text-xs text-textMain italic">Supervisor: Dr. Lakshmi Vellanki</p>
+                        </div>
+                        <div class="relative pl-4 border-l-2 border-gray-300">
+                            <div class="absolute w-3 h-3 bg-gray-400 rounded-full -left-[0.4rem] top-1"></div>
+                            <h3 class="font-bold text-royalBlue text-lg leading-tight">M.Sc. in General Chemistry</h3>
+                            <p class="text-sm text-textMuted mt-1 mb-2">JSS College, Karnatak University, Dharwad</p>
+                            <p class="text-xs font-bold text-gray-500 mb-2">2019 − 2021</p>
+                            <p class="text-xs text-textMain font-medium text-green-700 bg-green-50 inline-block px-2 py-1 rounded">University 1st Rank</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="py-20 bg-white relative overflow-hidden">
+        <!-- Floating Porous Structure 2 -->
+        <div class="absolute bottom-[-50px] left-[-50px] opacity-5 pointer-events-none">
+            <svg width="300" height="300" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 0 L93.3 25 L93.3 75 L50 100 L6.7 75 L6.7 25 Z" fill="none" stroke="#800000" stroke-width="1"/>
+                <path d="M50 20 L76 35 L76 65 L50 80 L24 65 L24 35 Z" fill="none" stroke="#0A3161" stroke-width="1"/>
+                <circle cx="50" cy="20" r="2" fill="#800000" />
+                <circle cx="76" cy="35" r="2" fill="#800000" />
+                <circle cx="76" cy="65" r="2" fill="#800000" />
+                <circle cx="50" cy="80" r="2" fill="#800000" />
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <h2 class="text-3xl section-heading text-center w-full block mb-12">Core Research Areas</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Interest 1 -->
+                <div class="bg-porous p-8 rounded-2xl border border-blue-100 hover:border-royalBlue hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-blue-100 text-royalBlue rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-royalBlue group-hover:text-white transition-colors">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royalBlue mb-3">Zwitterionic CPPs & Iodine Capture</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">
+                        Developing novel zwitterionic conjugated porous polymers incorporating croconic and squaric acids. This creates a synergistic donor-acceptor environment, enabling massive iodine/polyiodide vapour adsorption capacities (up to 6.4 g/g) through electrostatic, π–π, and charge-transfer interactions.
+                    </p>
+                </div>
+
+                <!-- Interest 2 -->
+                <div class="bg-porous p-8 rounded-2xl border border-red-100 hover:border-maroon hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-red-50 text-maroon rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-maroon group-hover:text-white transition-colors">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royalBlue mb-3">Luminescent CPPs as Sensors</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">
+                        Integrating β-diketone boron difluoride (BF2) into olefin-linked luminescent CPPs using Knovenagel condensation. These materials serve as highly sensitive fluorescence sensors for nitroaromatic explosive compounds (like picric acid) via the Perrin’s sphere of action quenching method.
+                    </p>
+                </div>
+
+                <!-- Interest 3 -->
+                <div class="bg-porous p-8 rounded-2xl border border-blue-100 hover:border-royalBlue hover:shadow-lg transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-blue-100 text-royalBlue rounded-xl flex items-center justify-center text-2xl mb-6 group-hover:bg-royalBlue group-hover:text-white transition-colors">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-royalBlue mb-3">Cationic Adsorbents & Energy</h3>
+                    <p class="text-textMuted text-sm leading-relaxed">
+                        Synthesis of cationic CPPs based on pyrylium and thio-pyrylium networks for the highly efficient, counter-ion mediated removal of organic dyes in aqueous media. Also developing quinoxaline-based ladder-type 1D polymers for supercapacitor applications.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="py-20 bg-bgLight border-y border-gray-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl section-heading mb-12">Selected Publications</h2>
+            
+            <div class="space-y-4">
+                
+                <div class="hover-card bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="flex flex-col md:flex-row md:items-start gap-4">
+                        <div class="flex-shrink-0 w-16 h-16 bg-blue-50 text-royalBlue rounded-lg flex items-center justify-center font-bold text-lg border border-blue-200 shadow-inner">
+                            2026
+                        </div>
+                        <div>
+                            <a href="https://doi.org/10.1002/asia.70751" target="_blank" rel="noopener noreferrer" class="block group">
+                                <h3 class="text-lg font-bold text-royalBlue mb-1 leading-tight group-hover:text-maroon transition">
+                                    β-Diketone Boron Difluoride Integrated Olefin-Linked Luminescent Conjugated Porous Polymers as Nitroaromatic Sensors <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i>
+                                </h3>
+                            </a>
+                            <p class="text-sm text-textMain mb-2">
+                                <strong>Ravikumar, M. V.</strong> and Lakshmi, V.*
+                            </p>
+                            <div class="flex flex-wrap items-center gap-3 text-xs text-textMuted">
+                                <span class="italic font-bold text-maroon">Chem. Asian J.</span>
+                                <span>•</span>
+                                <span>2026, 8(21), e70751</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hover-card bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="flex flex-col md:flex-row md:items-start gap-4">
+                        <div class="flex-shrink-0 w-16 h-16 bg-blue-50 text-royalBlue rounded-lg flex items-center justify-center font-bold text-lg border border-blue-200 shadow-inner">
+                            2025
+                        </div>
+                        <div>
+                            <a href="https://doi.org/10.1016/j.jhazmat.2025.140421" target="_blank" rel="noopener noreferrer" class="block group">
+                                <h3 class="text-lg font-bold text-royalBlue mb-1 leading-tight group-hover:text-maroon transition">
+                                    Croconic Acid-based Zwitterionic Conjugated Porous Polymer Featuring Nitrogen-Rich Triazine Cores for Enhanced Iodine Capture <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i>
+                                </h3>
+                            </a>
+                            <p class="text-sm text-textMain mb-2">
+                                <strong>Ravikumar, M. V.</strong> and Lakshmi, V.*
+                            </p>
+                            <div class="flex flex-wrap items-center gap-3 text-xs text-textMuted">
+                                <span class="italic font-bold text-maroon">Journal of Hazardous Materials</span>
+                                <span>•</span>
+                                <span>2025, 500, 140421</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hover-card bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="flex flex-col md:flex-row md:items-start gap-4">
+                        <div class="flex-shrink-0 w-16 h-16 bg-gray-50 text-textMuted rounded-lg flex items-center justify-center font-bold text-lg border border-gray-200 shadow-inner">
+                            2025
+                        </div>
+                        <div>
+                            <a href="https://doi.org/10.1002/ejoc.202401367" target="_blank" rel="noopener noreferrer" class="block group">
+                                <h3 class="text-lg font-bold text-royalBlue mb-1 leading-tight group-hover:text-maroon transition">
+                                    Structure-Property Evaluation of Knoevenagel-derived π-Conjugated Organic Systems <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i>
+                                </h3>
+                            </a>
+                            <p class="text-sm text-textMain mb-2">
+                                <strong>Ravikumar, M. V.</strong>, Raj, A. K., Rao, M. R., and Lakshmi, V.*
+                            </p>
+                            <div class="flex flex-wrap items-center gap-3 text-xs text-textMuted">
+                                <span class="italic font-bold text-maroon">Eur. J. Org. Chem.</span>
+                                <span>•</span>
+                                <span>2025, 28, e202401367</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hover-card bg-white p-6 rounded-xl border border-gray-200">
+                    <div class="flex flex-col md:flex-row md:items-start gap-4">
+                        <div class="flex-shrink-0 w-16 h-16 bg-gray-50 text-textMuted rounded-lg flex items-center justify-center font-bold text-lg border border-gray-200 shadow-inner">
+                            2024
+                        </div>
+                        <div>
+                            <a href="https://doi.org/10.1002/asia.202400808" target="_blank" rel="noopener noreferrer" class="block group">
+                                <h3 class="text-lg font-bold text-royalBlue mb-1 leading-tight group-hover:text-maroon transition">
+                                    Croconic Acid Integrated Zwitterionic Conjugated Porous Polymer for Effective Iodine Adsorption <i class="fas fa-external-link-alt text-xs ml-1 opacity-50"></i>
+                                </h3>
+                            </a>
+                            <p class="text-sm text-textMain mb-2">
+                                <strong>Ravikumar, M. V.</strong>, Nipate, A. B., Deyona, M. J., Rao, M. R., and Lakshmi, V.*
+                            </p>
+                            <div class="flex flex-wrap items-center gap-3 text-xs text-textMuted">
+                                <span class="italic font-bold text-maroon">Chem. Asian J.</span>
+                                <span>•</span>
+                                <span>2024, 19(23), e202400808</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submitted/Prep -->
+                <div class="mt-10 p-6 bg-white rounded-xl border border-red-100 shadow-sm relative overflow-hidden">
+                    <!-- Subtle pattern -->
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-red-50 rounded-bl-full -z-10"></div>
+                    
+                    <h3 class="text-xl font-bold text-maroon mb-4 border-b border-red-100 pb-2">Under Review / Preparation</h3>
+                    <ul class="space-y-4 text-sm text-textMain list-disc pl-5">
+                        <li>
+                            <strong>Ravikumar, M. V.</strong>, Gayathri B., and Lakshmi, V.* (2026). "Pyrylium and Thio-Pyrylium Integrated Olefin-linked Cationic Conjugated Porous Polymers for the Adsorption of Organic Dyes in Aqueous Medium." <span class="italic text-maroon font-medium bg-red-50 px-2 py-0.5 rounded">(Submitted)</span>
+                        </li>
+                        <li>
+                            <strong>Ravikumar, M. V.</strong> and Lakshmi, V.* (2026). "Ionic conjugated porous organic polymers: A new generation of adsorbents of iodine species and organic dyes." <span class="italic text-textMuted">(Manuscript to be submitted)</span>
+                        </li>
+                        <li>
+                            <strong>Ravikumar, M. V.</strong>, Gayathri B., Aritra, B., and Lakshmi, V.* (2026). "One-Dimensional quinoxaline-based Ladder-Type Novel π-Conjugated Polymer for Supercapacitance Application." <span class="italic text-textMuted">(Manuscript under preparation)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl section-heading mb-12">Professional Experience</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Research Experience -->
+                <div>
+                    <h3 class="text-2xl font-bold text-royalBlue mb-6 flex items-center gap-2"><i class="fas fa-microscope text-maroon"></i> Research Experience</h3>
+                    
+                    <div class="relative pl-6 border-l-2 border-blue-200 space-y-8">
+                        <div class="relative">
+                            <div class="absolute w-4 h-4 bg-royalBlue rounded-full -left-[1.65rem] top-1 border-4 border-white shadow-sm"></div>
+                            <h4 class="font-bold text-lg text-royalBlue">Ph.D. Candidate / Researcher</h4>
+                            <p class="text-sm font-bold text-maroon mb-2">NITK, Surathkal | July 2022 – July 2026</p>
+                            <p class="text-sm text-textMuted leading-relaxed">
+                                Executed deep research in Dr. Lakshmi Vellanki’s group. Focused on synthesizing novel zwitterionic conjugated porous polymers, optimizing high iodine vapor adsorption capacities, developing fluorescent sensors for nitroaromatic explosives, and integrating computational DFT models with experimental kinetics.
+                            </p>
+                        </div>
+
+                        <div class="relative">
+                            <div class="absolute w-4 h-4 bg-gray-400 rounded-full -left-[1.65rem] top-1 border-4 border-white shadow-sm"></div>
+                            <h4 class="font-bold text-lg text-royalBlue">M.Sc. Researcher</h4>
+                            <p class="text-sm font-medium text-gray-500 mb-2">JSS College, Dharwad | Jun 2019 – May 2021</p>
+                            <p class="text-sm text-textMuted leading-relaxed">
+                                Worked in Dr. Naveen B.'s group on a dissertation project entitled "Literature Survey on Oxadiazoles," building a strong foundation in heterocyclic chemistry and research methodologies.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teaching Experience -->
+                <div>
+                    <h3 class="text-2xl font-bold text-royalBlue mb-6 flex items-center gap-2"><i class="fas fa-chalkboard-teacher text-maroon"></i> Teaching Experience</h3>
+                    
+                    <div class="bg-white p-6 rounded-xl border border-gray-100 hover-card">
+                        <h4 class="font-bold text-lg text-royalBlue">Lecturer (Chemistry)</h4>
+                        <p class="text-sm font-medium text-gray-500 mb-3">Vidyaniketan PU College, Hubli</p>
+                        <p class="text-sm text-textMuted">
+                            Taught core Inorganic and Organic chemistry curriculum to pre-university students (Classes XI and XII), preparing them for board and competitive examinations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="py-20 bg-bgLight">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl section-heading mb-12">Awards, Honors & Conferences</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Awards -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-blue-100 border-t-4 border-t-royalBlue">
+                    <h3 class="text-xl font-bold text-royalBlue mb-6 border-b pb-2"><i class="fas fa-trophy text-yellow-500 mr-2"></i> Recognitions</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-award text-maroon mt-1"></i>
+                            <div>
+                                <strong class="text-textMain block">University 1st Rank</strong>
+                                <span class="text-sm text-textMuted">MSc. General Chemistry, Karnatak University (2021)</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-certificate text-maroon mt-1"></i>
+                            <div>
+                                <strong class="text-textMain block">Best Poster Awards</strong>
+                                <span class="text-sm text-textMuted">CROSS LINKS-2024 (NIT Calicut) & NEXT-GEN FUNCTIONAL MATERIALS-2025 (IIT Dharwad - RSC Applied Interfaces)</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-star text-maroon mt-1"></i>
+                            <div>
+                                <strong class="text-textMain block">Young Achiever Award</strong>
+                                <span class="text-sm text-textMuted">Felicitated by Dept. of Social Welfare, Dharwad (2022)</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check-circle text-maroon mt-1"></i>
+                            <div>
+                                <strong class="text-textMain block">Competitive Examinations</strong>
+                                <span class="text-sm text-textMuted">GATE Chemical Sciences (2022, 2023) | K-SET for Assistant Professor (Jan 2021)</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Conferences & Workshops -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-red-100 border-t-4 border-t-maroon">
+                    <h3 class="text-xl font-bold text-royalBlue mb-6 border-b pb-2"><i class="fas fa-users text-royalBlueLight mr-2"></i> Presentations & Workshops</h3>
+                    <ul class="space-y-4 text-sm text-textMain">
+                        <li class="flex gap-3"><i class="fas fa-caret-right text-royalBlue mt-1"></i> <span><strong>Poster Presentation:</strong> 'NEXT-GEN FUNCTIONAL MATERIALS 2025', IIT Dharwad (Oct-Nov 2025).</span></li>
+                        <li class="flex gap-3"><i class="fas fa-caret-right text-royalBlue mt-1"></i> <span><strong>Poster Presentation:</strong> 'AFMECA-2025', NITK Surathkal (May 2025).</span></li>
+                        <li class="flex gap-3"><i class="fas fa-caret-right text-royalBlue mt-1"></i> <span><strong>Poster Presentation:</strong> 'CROSS LINKS-2024', NIT Calicut (July 2024).</span></li>
+                        <li class="flex gap-3"><i class="fas fa-caret-right text-royalBlue mt-1"></i> <span><strong>Poster Presentation:</strong> MTIC XX2023, IISc Bangalore (Dec 2023).</span></li>
+                        <li class="flex gap-3"><i class="fas fa-caret-right text-gray-400 mt-1"></i> <span><strong>Workshop:</strong> 7th CCM Workshop on Computational Chemistry of Materials (Oct 2022).</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-royalBlue text-blue-100 py-12 border-t-4 border-maroon relative overflow-hidden">
+        <!-- Footer Porous Pattern -->
+        <div class="absolute inset-0 opacity-5">
+             <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="hex" x="0" y="0" width="60" height="103.9" patternUnits="userSpaceOnUse">
+                        <path d="M30 51.962L60 34.641v-34.64L30 -17.32 0 0v34.641zM30 48.5L2.887 32.91v-31.18L30 -13.856l27.113 15.586v31.18z" fill="#ffffff" fill-opacity="1"/>
+                    </pattern>
+                </defs>
+                <rect x="0" y="0" width="100%" height="100%" fill="url(#hex)" />
+            </svg>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col items-center text-center mb-8 border-b border-blue-800 pb-8">
+                <!-- Contact & Address -->
+                <h3 class="text-white font-serif font-bold text-xl mb-4">Dr. Ravikumar M. V.</h3>
+                <p class="text-sm leading-relaxed mb-4 text-blue-200">
+                    Jamkhandi, Bagalkot District <br>
+                    Karnataka, India - 587301
+                </p>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <p class="text-sm hover:text-white transition"><i class="fas fa-envelope mr-2 text-maroonLight"></i> ravimv12@gmail.com</p>
+                    <p class="text-sm hover:text-white transition"><i class="fas fa-envelope mr-2 text-maroonLight"></i> ravimv.227cy007@nitk.edu.in</p>
+                    <p class="text-sm"><i class="fas fa-phone mr-2 text-maroonLight"></i> +91 7899504769</p>
+                </div>
+            </div>
+
+            <div class="text-sm text-center flex flex-col md:flex-row justify-between items-center gap-4 text-blue-300">
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Dr. Ravikumar Maruti Vibhuti. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="mailto:ravimv12@gmail.com" class="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center hover:bg-maroon hover:text-white transition" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/ravikumar-vibhuti-07389b1a3/" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center hover:bg-maroon hover:text-white transition" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://scholar.google.com/citations?user=oZ3ms64AAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center hover:bg-maroon hover:text-white transition" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                    <a href="https://orcid.org/0009-0002-0384-6573" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center hover:bg-maroon hover:text-white transition" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                    <a href="https://www.researchgate.net/profile/Ravikumar-Vibhuti" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-blue-900 flex items-center justify-center hover:bg-maroon hover:text-white transition" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Navbar shadow on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 10) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
